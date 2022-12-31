@@ -1,0 +1,24 @@
+ul li {
+  list-style: none;
+}
+
+p {
+  font-size: 1.3rem;
+  color: #5b5757;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+p:hover {
+  cursor: pointer;
+  color: #de3b49;
+  transition: color 0.6s ease;
+}
+
+h1 span:hover {
+  color: #de3b49;
+  cursor: pointer;
+  transition: color 0.8s ease;
+}

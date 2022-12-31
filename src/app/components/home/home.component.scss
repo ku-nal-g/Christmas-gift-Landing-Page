@@ -1,0 +1,35 @@
+.home-div {
+  padding: 5rem 0 2rem;
+}
+
+.text-div {
+  padding: 13% 10%;
+}
+
+.text-div h1 {
+  font-size: 3.3rem;
+  font-weight: 600;
+}
+
+.info-text p {
+  font-size: 1.3rem;
+  color: #5b5757;
+}
+
+.home-img {
+  visibility: visible;
+  opacity: 1;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transition: opacity 1.8s cubic-bezier(0.5, 0, 0, 1) 0s, transform 1.8s cubic-bezier(0.5, 0, 0, 1) 0s;
+}
+
+button.started-btn {
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #da2535;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+}

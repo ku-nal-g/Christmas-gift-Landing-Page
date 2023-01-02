@@ -1,16 +1,47 @@
-header {
+header.main-header {
   display: flex;
   justify-content: space-between;
-  position: fixed;
   width: 100%;
-  box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 100;
-  background-color: #fefbfb;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
 }
+header.fixed-header{
+  position: fixed;
+  z-index: 1000;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+  transition: all 0.8 ease;
+}
+.toggle-header-div{
+  display: none;
+}
+.show-toggle-header-div p a{
+  font-weight: 600;
+  text-decoration: none;
+  color: #161212;
+  font-size: 1.3rem;
 
+}
+.show-toggle-header-div p a:hover{
+  color: #DA2535;
+  cursor: pointer;
+  transition: color 0.6s ease;
+}
+.show-toggle-header-div{
+  display: block;
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  padding: 3% 5%;
+  opacity: 1;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transition: opacity 1.8s cubic-bezier(0.5, 0, 0, 1) 0s, transform 1.8s cubic-bezier(0.5, 0, 0, 1) 0s;
+  background: rgb(254, 251, 251);
+  transition: all 0.6s ease;
+}
 header a {
   font-weight: 600;
   text-decoration: none;
@@ -25,6 +56,7 @@ header a:hover {
 }
 
 .navigation-div {
+  display: block;
   width: 45%;
 }
 
@@ -43,6 +75,9 @@ header a:hover {
 .navigation-div ul li a:hover {
   color: #DA2535;
   transition: color 0.6s ease;
+}
+.btn-div{
+  display: none;
 }
 
 /*-----------------------------Button-------------------*/
@@ -66,4 +101,13 @@ header a:hover {
 .showbtn:hover {
   background-color: #da2535;
   opacity: 1;
+}
+
+@media screen and (max-width: 1184px) {
+  .navigation-div{
+    display: none;
+  }
+  .btn-div{
+    display: block;
+  }
 }

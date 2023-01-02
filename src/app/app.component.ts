@@ -8,13 +8,14 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent {
 
   showButton: boolean = false;
+  toggleDiv:boolean = false;
 
   @HostListener("window:scroll", []) onWindowScroll() {
     this.scrollFunction();
   }
   // When the user scrolls down 20px from the top of the document, show the button
   scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
       this.showButton = true;
     } else {
       this.showButton = false;
@@ -27,5 +28,14 @@ export class AppComponent {
   }
   getButtonClass() {
     return this.showButton ? 'showbtn' : '';
+  }
+  getHeaderClass(){
+    return !this.showButton ? 'main-header' : 'fixed-header';
+  }
+  showToggleDiv(){
+    this.toggleDiv = !this.toggleDiv;
+  }
+  getConditionalClass(){
+    return !this.toggleDiv ? 'toggle-header-div' : "show-toggle-header-div"
   }
 }

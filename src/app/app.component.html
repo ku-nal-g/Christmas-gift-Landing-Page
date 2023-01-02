@@ -1,6 +1,6 @@
 <div class="main-div">
   <section class="header">
-    <header class="p-3">
+    <header [ngClass]="getHeaderClass()" class="p-3 main-header">
       <div class="logo-div pt-2">
         <a class="ms-5 ps-5 pt-3">Christmas Gift</a>
       </div>
@@ -12,8 +12,37 @@
           <li><a href="#accessories" class="me-4 p-2">Accessory</a></li>
         </ul>
       </div>
+      <div class="btn-div pt-2">
+        <span (click)="showToggleDiv()" style="cursor: pointer;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </span>
+      </div>
     </header>
+  </section>
 
+  <section [ngClass]="getConditionalClass()">
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col-md-12 mt-4">
+         <p [ngStyle]="{'margin-top' : !this.showButton ? '0%' : '3%' }">
+          <a (click)="showToggleDiv()" class="me-4 p-2" href="#">Home</a>
+         </p>
+         <p>
+          <a (click)="showToggleDiv()" class="me-4 p-2" href="#share">Share</a>
+         </p>
+         <p>
+          <a (click)="showToggleDiv()" class="me-4 p-2" href="#decorations">Decorations</a>
+         </p>
+         <p>
+          <a (click)="showToggleDiv()" class="me-4 p-2" href="#accessories">Accessory</a>
+         </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="home" class="home-div">
